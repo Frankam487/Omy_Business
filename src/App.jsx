@@ -1,10 +1,18 @@
-import React from 'react';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ContactPage from "./pages/ContactPage";
+import Whatsapp from "./components/Whatsapp";
 const App = () => {
   return (
-    <div>
-      <h1 className='text-2xl text-red-300 text-center'>hello</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/contact" element={<ContactPage/>}/>
+        </Routes>
+      </BrowserRouter>
+      <Whatsapp/>
+    </>
   );
 };
 
